@@ -9,10 +9,11 @@ chrome.contextMenus.create({
 });
 
 // "https://api-inference.huggingface.co/models/gpt2",
+// "https://api-inference.huggingface.co/models/EleutherAI/gpt-j-6B",
 
 async function Generator(data) {
   const response = await fetch(
-    "https://api-inference.huggingface.co/models/EleutherAI/gpt-j-6B",
+    "https://api-inference.huggingface.co/models/bigscience/bloom",
     {
       headers: {
         Authorization: "Bearer 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",
