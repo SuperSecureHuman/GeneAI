@@ -1,0 +1,31 @@
+{
+    "manifest_version": 3,
+    "name": "Gene-Ai",
+    "version": "1.0",
+    "description": "Gene-Ai,Aids in Better Writing",
+    "permissions":[
+        "activeTab",
+        "tabs","contextMenus"
+    ],
+    "host_permissions": [],
+    "background": {
+        "service_worker": "background.js"
+      },
+    "action": {
+        "default_title": "Gene-AI",
+        "default_icon": "assets/favicon_package_v0.16/favicon-32x32.png",
+        "default_popup": "popup.html"
+      },
+
+    "commands": {
+    "toggle-spell-check": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+L",
+        "mac": "Command+Shift+L"
+      },
+      "description": "Toggle Gene-Ai"
+    }
+  }
+
+
+}
