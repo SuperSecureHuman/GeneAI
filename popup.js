@@ -1,8 +1,10 @@
 let result_history=[""];
 
+
+
 document.getElementById("Gen-generate").addEventListener("click", () => {
     console.log("Generate Button Clicked");
-    let text = document.getElementById("Gen-text").value;
+    let text = document.getElementById("Gen-Input").value;
     let dropdown = document.getElementById("Gen-dropdown").value;
     if(result_history.length==1){
         result_history.push(text);
@@ -43,9 +45,37 @@ document.getElementById("Gen-generate").addEventListener("click", () => {
         if (text.length > 0) {
             chrome.runtime.sendMessage({ text: text, dropdown: dropdown }, (response) => {
                 console.log(response);
-                let result = response.result;
-                document.getElementById("Gen-result").value = result;
-                temp.push(result);
+                let i=0;
+                let nspeed = 10;
+                function typeWriter() {
+                    text=response.result;
+
+                    if (i < text.length) {
+                        i++;
+                        document.getElementById("Gen-result").value = text.substring(0, i);
+                        setTimeout(typeWriter, nspeed);
+                    }
+                }
+                typeWriter();
+
+            });
+        }
+    }
+
+    else if(dropdown=="SummarizerV2"){
+        let number=document.getElementById("Gen-number").value;
+        if (text.length > 0) {
+            chrome.runtime.sendMessage({ text: text, dropdown: dropdown,number:number }, (response) => {
+                console.log(response);
+                let i=0;
+                let nspeed = 10;
+                function typeWriter() {
+                    text=response.result;
+                    i++;
+                    document.getElementById("Gen-result").value = text.substring(0, i);
+                    setTimeout(typeWriter, nspeed);
+                    }
+                typeWriter();
             });
         }
     }
@@ -54,18 +84,25 @@ document.getElementById("Gen-generate").addEventListener("click", () => {
 
 document.getElementById("Gen-dropdown").addEventListener("change", () => {
     let dropdown = document.getElementById("Gen-dropdown").value;
-    if (dropdown == "Summarizer") {
+    if (dropdown == "Summarizer" || dropdown == "Summarizer V2") {
         document.getElementById("Gen-generate").innerHTML = "Summarize";
+        document.getElementById("Gen-number").hidden = true;
     } else {
         document.getElementById("Gen-generate").innerHTML = "Generate";
+        document.getElementById("Gen-number").hidden = true;
+    }
+    if (dropdown == "SummarizerV2") {
+        document.getElementById("Gen-number").hidden = false;
     }
 
 });
 
+
+
 // document.getElementById("Undo").addEventListener("click", () => {
 //     console.log("Undo Button Clicked");
 //     // replace the text in the text box with the last text in the temp array
-//     document.getElementById("Gen-text").value = temp[temp.length - 2];
+//     document.getElementById("Gen-Input").value = temp[temp.length - 2];
 //     // remove the last element from the temp array
 //     temp.pop();
 //     // clear the result text box
@@ -75,7 +112,7 @@ document.getElementById("Gen-dropdown").addEventListener("change", () => {
 
 
 document.getElementById("Gen-clear").addEventListener("click", () => {
-    document.getElementById("Gen-text").value = "";
+    document.getElementById("Gen-Input").value = "";
     document.getElementById("Gen-result").value = "";
     result_history=[""];
 }   

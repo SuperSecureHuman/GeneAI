@@ -18,15 +18,15 @@
           <select name="dropdown" id="Gen-dropdown">
             <option value="generate">Generate</option>
             <option value="Summarizer">Summarizer</option>
-            
+            <option value="SummarizerV2">SummarizerV2</option>
+
           </select>
         </div>
 
-        <textarea name="text" id="Gen-text" placeholder="Let's Generate!"></textarea>
-
-
-        <!-- result, which will not accept input -->
+        <textarea name="text" id="Gen-Input" placeholder="Let's Generate!"></textarea>
+        <textarea name="input" id="Gen-number" placeholder="Key Points" hidden></textarea>
         <textarea name="result" id="Gen-result" placeholder="Result" readonly></textarea>
+
       </div>
       <div class="Gen-buttons">
         <button class="glow-on-hover" id="Gen-generate" type="button">
