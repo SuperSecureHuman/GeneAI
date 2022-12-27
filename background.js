@@ -50,6 +50,29 @@ async function ParaPhaser(text,tone) {
   return result;
 }
 
+async function SummarizerV2(paragraph,number){
+  const response=await fetch(
+    "https://www.everyprompt.com/api/v0/calls/gene-ai/summary--hJk-c",
+    {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: "Bearer jOjKAhl6_idAGYiie900L",
+      },
+      body: JSON.stringify({
+        "variables": {
+          "paragraph": `${paragraph}`,
+          "number": `${number}`,
+        },
+        "user": "testing"
+      }),
+    }
+  );
+  const result=await response.json();
+  console.log(result);
+  return result;
+}
+
 chrome.contextMenus.onClicked.addListener(function (info, tab) {
   if (info.menuItemId == "Generate") {
     console.log("Input");
@@ -81,6 +104,15 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
       sendResponse({ result: result.choices[0].text });
       console.log(result);
     });
+  }
+  else if (dropdown == "SummarizerV2"){
+    console.log("Summarizer V2");
+    SummarizerV2(text,key_number).then((response) => {
+      let result = response;
+      sendResponse({ result: result.choices[0].text });
+      console.log(result);
+    });
+
   }
   return true;
 });

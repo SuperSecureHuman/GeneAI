@@ -1,8 +1,10 @@
 let result_history=[""];
 
+
+
 document.getElementById("Gen-generate").addEventListener("click", () => {
     console.log("Generate Button Clicked");
-    let text = document.getElementById("Gen-text").value;
+    let text = document.getElementById("Gen-Input").value;
     let dropdown = document.getElementById("Gen-dropdown").value;
     if(result_history.length==1){
         result_history.push(text);
@@ -82,12 +84,6 @@ document.getElementById("Gen-generate").addEventListener("click", () => {
 
 document.getElementById("Gen-dropdown").addEventListener("change", () => {
     let dropdown = document.getElementById("Gen-dropdown").value;
-<<<<<<< HEAD
-    if (dropdown == "Summarizer") {
-        document.getElementById("Gen-generate").innerHTML = "Summarize";
-    } else {
-        document.getElementById("Gen-generate").innerHTML = "Generate";
-=======
     if (dropdown == "SummarizerV2") {
         document.getElementById("Gen-generate").innerHTML = "Summarize it";
         document.getElementById("Gen-number").hidden = false;
@@ -106,15 +102,16 @@ document.getElementById("Gen-dropdown").addEventListener("change", () => {
         document.getElementById("Gen-number").hidden = true;
         document.getElementById("Gen-Input").placeholder = "Enter the text to paraphrase";
 
->>>>>>> 4209afb (added Tone and Paraphraser)
     }
 
 });
 
+
+
 // document.getElementById("Undo").addEventListener("click", () => {
 //     console.log("Undo Button Clicked");
 //     // replace the text in the text box with the last text in the temp array
-//     document.getElementById("Gen-text").value = temp[temp.length - 2];
+//     document.getElementById("Gen-Input").value = temp[temp.length - 2];
 //     // remove the last element from the temp array
 //     temp.pop();
 //     // clear the result text box
@@ -124,7 +121,7 @@ document.getElementById("Gen-dropdown").addEventListener("change", () => {
 
 
 document.getElementById("Gen-clear").addEventListener("click", () => {
-    document.getElementById("Gen-text").value = "";
+    document.getElementById("Gen-Input").value = "";
     document.getElementById("Gen-result").value = "";
     result_history=[""];
 }   
