@@ -17,15 +17,20 @@
         <div class="select-dropdown">
           <select name="dropdown" id="Gen-dropdown">
             <option value="generate">Generate</option>
-            <option value="Summarizer">Summarizer</option>
-            <option value="SummarizerV2">SummarizerV2</option>
+            <option value="paraphraser">Summarizer</option>
+            <option value="Summarizer">SummarizerV2</option>
 
           </select>
         </div>
-
-        <textarea name="text" id="Gen-Input" placeholder="Let's Generate!"></textarea>
-        <textarea name="input" id="Gen-number" placeholder="Key Points" hidden></textarea>
-        <textarea name="result" id="Gen-result" placeholder="Result" readonly></textarea>
+        <div>
+          <textarea name="text" id="Gen-Input" placeholder="Let's Generate!"></textarea>
+        </div>
+        <div>
+          <textarea name="input" id="Gen-number" placeholder="Key Points" hidden></textarea>
+        </div>
+        <div>
+          <textarea name="result" id="Gen-result" placeholder="Result" readonly></textarea>
+        </div>
 
       </div>
       <div class="Gen-buttons">

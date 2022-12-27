@@ -2,7 +2,7 @@
 TODO: Summarizers,ParaPhaser
 */
 
-chrome.contextMenus.create({
+browser.contextMenus.create({
   id: "Generate",
   title: "Generate Text",
   contexts: ["all"],
@@ -66,7 +66,7 @@ async function SummarizerV2(paragraph,number){
   return result;
 }
 
-chrome.contextMenus.onClicked.addListener(function (info, tab) {
+browser.contextMenus.onClicked.addListener(function (info, tab) {
   if (info.menuItemId == "Generate") {
     console.log("Input");
     console.log(info.selectionText);
@@ -77,7 +77,7 @@ chrome.contextMenus.onClicked.addListener(function (info, tab) {
   }
 });
 
-chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
+browser.runtime.onMessage.addListener((request, sender, sendResponse) => {
   let text = request.text;
   let dropdown = request.dropdown;
   let key_number=   request.number;

@@ -1,17 +1,18 @@
 {
-    "manifest_version": 3,
+    "manifest_version": 2,
     "name": "Gene-Ai",
     "version": "1.0",
     "description": "Gene-Ai,Aids in Better Writing",
     "permissions":[
         "activeTab",
-        "tabs","contextMenus"
+        "tabs","contextMenus",
+        "webRequest",
+        "*://www.everyprompt.com/*"
     ],
-    "host_permissions": ["https://www.everyprompt.com/*"],
     "background": {
-        "service_worker": "background.js"
+        "scripts": ["background.js"]
       },
-    "action": {
+    "browser_action": {
         "default_title": "Gene-AI",
         "default_icon": "assets/favicon_package_v0.16/favicon-32x32.png",
         "default_popup": "popup.html"
