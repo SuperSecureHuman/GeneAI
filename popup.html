@@ -17,16 +17,27 @@
         <div class="select-dropdown">
           <select name="dropdown" id="Gen-dropdown">
             <option value="generate">Generate</option>
-            <option value="Summarizer">Summarizer</option>
-            <option value="SummarizerV2">SummarizerV2</option>
-
+            <option value="ParaPhraser">ParaPhraser</option>
+            <option value="SummarizerV2">Summarizer</option>
           </select>
         </div>
-
-        <textarea name="text" id="Gen-Input" placeholder="Let's Generate!"></textarea>
-        <textarea name="input" id="Gen-number" placeholder="Key Points" hidden></textarea>
-        <textarea name="result" id="Gen-result" placeholder="Result" readonly></textarea>
-
+        <div>
+          <textarea name="text" id="Gen-Input" placeholder="Let's Generate!"></textarea>
+        </div>
+        <div>
+          <textarea name="input" id="Gen-number" placeholder="Key Points" hidden></textarea>
+        </div>
+        <div class="select-dropdown">
+          <select name="dropdown" id="Tone-dropdown" hidden>
+            <option value="Fluency">Fluency</option>
+            <option value="Standard">Standard</option>
+            <option value="Creative">Creative</option>
+            <option value="Smarter">Smarter</option>
+          </select>
+        </div>
+        <div>
+          <textarea name="result" id="Gen-result" placeholder="Result" readonly></textarea>
+        </div>
       </div>
       <div class="Gen-buttons">
         <button class="glow-on-hover" id="Gen-generate" type="button">
@@ -44,8 +55,6 @@
     </div>
   </div>
   <script src="popup.js"></script>
-
-
 </body>
 
 </html>
