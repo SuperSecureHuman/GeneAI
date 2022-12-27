@@ -1,8 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&family=Roboto+Mono&display=swap');
+:root{
+    --bgColor: #333;
+    --textPrimary: #fff;
+    --textSecondary: #666;
+    
+}
 html,
-body {
-    background: #F0F0F0;
-    font-family: 'Open Sans', sans-serif;
-    font-size: 14px;
+body{
+    font-family: 'Roboto', sans-serif;
+    background-color:var(--bgColor);
+    color: var(--textPrimary);  
+    /* font size  */
+    font-size: 16px;
 }
 
 .glow-on-hover {
@@ -98,12 +107,15 @@ textarea {
     line-height: 1.4em;
     padding: 5px 8px;
     transition: background-color 0.2s ease 0s;
+    color: #fff;
 }
 
 
 textarea:focus {
-    background: none repeat scroll 0 0 #FFFFFF;
+    background: none repeat scroll 0 0 #6a6666;
     outline-width: 0;
+    /* text color */
+    color: #fff;
 }
 
 .select-dropdown,
