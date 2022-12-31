@@ -11,20 +11,8 @@
         "service_worker": "background.js"
       },
     "action": {
-        "default_title": "Gene-AI",
-        "default_icon": "assets/favicon_package_v0.16/favicon-32x32.png",
+        "default_title": "GeneAI",
+        "default_icon": "assets/favicon-32x32.png",
         "default_popup": "popup.html"
-      },
-
-    "commands": {
-    "toggle": {
-      "suggested_key": {
-        "default": "Ctrl+Shift+V",
-        "mac": "Command+Shift+V"
-      },
-      "description": "Toggle Gene-Ai"
-    }
-  }
-
-
+      }
 }
