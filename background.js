@@ -1,6 +1,3 @@
-/*
-TODO: Summarizers,ParaPhaser
-*/
 
 chrome.contextMenus.create({
   id: "Generate",

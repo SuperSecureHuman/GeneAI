@@ -21,21 +21,23 @@
             <option value="SummarizerV2">Summarizer</option>
           </select>
         </div>
-        <div>
+
+        <div class="text-input">
           <textarea name="text" id="Gen-Input" placeholder="Let's Generate!"></textarea>
         </div>
-        <div>
+        <div class="text-input">
           <textarea name="input" id="Gen-number" placeholder="Key Points" hidden></textarea>
         </div>
-        <div class="select-dropdown">
-          <select name="dropdown" id="Tone-dropdown" hidden>
+        <div class="select-dropdown" hidden>
+          <select name="dropdown" id="Tone-dropdown">
             <option value="Fluency">Fluency</option>
             <option value="Standard">Standard</option>
             <option value="Creative">Creative</option>
             <option value="Smarter">Smarter</option>
           </select>
         </div>
-        <div>
+        <div class="text-input">
+          <div id="copyToClipboard-a" class="clipboard icon"></div>
           <textarea name="result" id="Gen-result" placeholder="Result" readonly></textarea>
         </div>
       </div>
@@ -43,11 +45,6 @@
         <button class="glow-on-hover" id="Gen-generate" type="button">
           Generate
         </button>
-
-        <!-- <button class="glow-on-hover" id="Undo" type="button">
-          Undo
-        </button> -->
-
         <button class="glow-on-hover" id="Gen-clear" type="button">
           Clear
         </button>
