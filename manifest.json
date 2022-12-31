@@ -1,11 +1,10 @@
 {
     "manifest_version": 3,
-    "name": "Gene-Ai",
-    "version": "1.0",
-    "description": "Gene-Ai,Aids in Better Writing",
+    "name": "GeneAI",
+    "version": "1.0.0",
+    "description": "GeneAI, a chrome extension that helps you write better.",
     "permissions":[
-        "activeTab",
-        "tabs","contextMenus"
+        "contextMenus"
     ],
     "host_permissions": ["https://www.everyprompt.com/*"],
     "background": {
@@ -18,10 +17,10 @@
       },
 
     "commands": {
-    "toggle-spell-check": {
+    "toggle": {
       "suggested_key": {
-        "default": "Ctrl+Shift+L",
-        "mac": "Command+Shift+L"
+        "default": "Ctrl+Shift+V",
+        "mac": "Command+Shift+V"
       },
       "description": "Toggle Gene-Ai"
     }
